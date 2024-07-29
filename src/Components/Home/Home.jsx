@@ -13,9 +13,9 @@ export default function Home() {
         <h1 className="text-center text-white text-4xl font-bold">
           START FRAMEWORK
         </h1>
-        
+
         <div className="flex justify-center items-center">
-          <MdOutlineHorizontalRule className="text-6xl text-white"/>
+          <MdOutlineHorizontalRule className="text-6xl text-white" />
           <TiStarFullOutline className="text-2xl text-white" />
           <MdOutlineHorizontalRule className="text-6xl text-white" />
         </div>
