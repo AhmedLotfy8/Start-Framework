@@ -4,28 +4,25 @@ import './Navbar.css'
 
 export default function Navbar() {
 
-    const [expanded, setExpanded] = useState(false)
+    window.addEventListener("scroll", function() {
 
+        const nav = this.document.querySelector('nav');
 
-    useEffect(() => {
-        const handleScroll = () => {
-          if (window.scrollY > 20) { // Replace 100 with the height you want
-            setExpanded(true);
-          } else {
-            setExpanded(false);
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
+        if (this.window.scrollY != 0) {
+            nav.classList.remove('py-6')
+            nav.classList.add('py-2')
+        }
+        
+        else {
+            nav.classList.remove('py-2')
+            nav.classList.add('py-6')
+        }
 
+    })
 
     return (
 
-        <nav className={`${expanded ? 'expand' : ''} fixed w-full z-50 bg-white border-gray-200 dark:bg-slate-800 py-2`}>
+        <nav className="fixed w-full z-50 bg-white border-gray-200 dark:bg-slate-800 py-6">
             
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse">
